@@ -229,6 +229,9 @@ fn add_cycles_from(
 ) {
     for d in c.deps.iter() {
         if let Some((dep_repo, dep)) = find_info(&d.name, infos) {
+            if parents.iter().any(|i| i.0 == dep_repo && i.1 == dep.name) {
+                return; // loop that doesn't go through the root, let's not care
+            }
             parents.push((dep_repo.to_string(), dep.name.clone()));
             if dep_repo == root_repo {
                 cycles.push(parents.clone());
