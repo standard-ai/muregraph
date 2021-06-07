@@ -1,0 +1,19 @@
+[package]
+name = "muregraph"
+version = "0.1.0"
+authors = ["Léo Gaspard <leo@standard.ai>"]
+edition = "2018"
+
+[dependencies]
+anyhow = "1.0"
+cargo_toml = "0.9.0"
+console = "0.14.1"
+flate2 = "1.0"
+indicatif = "0.15.0"
+infer = "0.4.0"
+reqwest = { version = "0.11.3", features = ["blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+structopt = "0.3.21"
+tar = "0.4.33"
+tempfile = "3.2"
+toml = "0.5.8"
